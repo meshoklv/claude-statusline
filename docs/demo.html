@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>claude-statusline demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 48px 20px; background: #0d1117; color: #c9d1d9;
+         font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 28px; margin: 0 0 6px; color: #f0f6fc; }
+  .sub { color: #8b949e; margin: 0 0 36px; }
+  .card { margin: 0 0 30px; }
+  .card h2 { font-size: 15px; margin: 0 0 2px; color: #f0f6fc; }
+  .card p { margin: 0 0 10px; color: #8b949e; font-size: 13px; }
+  .term { background: #1e1e1e; border: 1px solid #30363d; border-radius: 10px; overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+  .bar { display: flex; gap: 7px; align-items: center; padding: 10px 14px; background: #2b2b2b;
+         border-bottom: 1px solid #1a1a1a; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .bar .title { margin-left: 10px; color: #9a9a9a; font-size: 12px; }
+  pre { margin: 0; padding: 16px 18px 18px; overflow-x: auto; color: #d4d4d4;
+        font: 14px/1.6 Menlo, "SF Mono", Consolas, "DejaVu Sans Mono", monospace; }
+  .muted { color: #6a6a6a; }
+  .prompt { color: #d4d4d4; }
+  .box { border: 1px solid #555; border-radius: 6px; padding: 2px 10px; margin-bottom: 8px; }
+  .line { white-space: pre; }
+</style></head>
+<body><main>
+<h1>claude-statusline</h1>
+<p class="sub">Real output of <code>statusline.py</code>, ANSI colours converted to HTML. Four presets of the same line.</p>
+<section class="card">
+  <h2>Full</h2><p>Everything on, plenty of headroom.</p>
+  <div class="term">
+    <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="title">claude - ~/my-app</span></div>
+<pre><span class="muted">...</span>
+<div class="box prompt">&gt; <span class="muted">Try "refactor the parser"</span></div><div class="line">[Opus 5.5] | <span style="color:#0dbc79">━</span><span style="color:#5a5a5a">━━━━━━━━━</span> 12% (120K/1000K) | <span style="color:#0dbc79">H:91% 4h21m</span> | <span style="color:#0dbc79">W:73%</span> | ⚙M+t | session <span style="color:#e5e510">$2.84</span> | my-app | ⏱ 1h 12m</div></pre>
+  </div>
+</section>
+<section class="card">
+  <h2>Minimal</h2><p>preset: minimal - model, context, 5-hour limit.</p>
+  <div class="term">
+    <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="title">claude - ~/my-app</span></div>
+<pre><span class="muted">...</span>
+<div class="box prompt">&gt; <span class="muted">Try "refactor the parser"</span></div><div class="line">[Opus 5.5] | <span style="color:#0dbc79">━</span><span style="color:#5a5a5a">━━━━━━━━━</span> 12% (120K/1000K) | <span style="color:#0dbc79">H:91% 4h21m</span></div></pre>
+  </div>
+</section>
+<section class="card">
+  <h2>Russian</h2><p>lang: ru - labels are localised, the rest stays compact.</p>
+  <div class="term">
+    <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="title">claude - ~/my-app</span></div>
+<pre><span class="muted">...</span>
+<div class="box prompt">&gt; <span class="muted">Try "refactor the parser"</span></div><div class="line">[Opus 5.5] | <span style="color:#0dbc79">━</span><span style="color:#5a5a5a">━━━━━━━━━</span> 12% (120K/1000K) | <span style="color:#0dbc79">H:91% 4h21m</span> | <span style="color:#0dbc79">W:73%</span> | ⚙M+t | сессия <span style="color:#cd3131">$18.40</span> | my-app | ⏱ 1h 12m</div></pre>
+  </div>
+</section>
+<section class="card">
+  <h2>Running dry</h2><p>420K tokens in a 1M window, 5-hour limit almost gone, burn-rate flame.</p>
+  <div class="term">
+    <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="title">claude - ~/my-app</span></div>
+<pre><span class="muted">...</span>
+<div class="box prompt">&gt; <span class="muted">Try "refactor the parser"</span></div><div class="line">[Opus 5.5] | <span style="color:#cd3131">━━━━</span><span style="color:#5a5a5a">━━━━━━</span> 42% (420K/1000K) | <span style="color:#cd3131">H:7% 2h10m</span> <span style="color:#cd3131">🔥14m</span> | <span style="color:#cd3131">W:16%</span> | ⚙H+t | session <span style="color:#cd3131">$296.47</span> | my-app | ⏱ 1h 12m</div></pre>
+  </div>
+</section>
+</main></body></html>

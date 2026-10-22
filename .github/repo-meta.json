@@ -1,0 +1,6 @@
+{
+  "name": "claude-statusline",
+  "description": "A fast, configurable Claude Code status line: context bar, 5-hour and weekly limits, burn-rate warning, cost, git, uptime.",
+  "homepage": "",
+  "topics": ["claude-code", "statusline", "status-bar", "terminal", "cli", "developer-tools", "rate-limits", "python", "ansi", "productivity"]
+}

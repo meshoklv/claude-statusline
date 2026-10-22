@@ -1,0 +1,17 @@
+{
+  "lang": "en",
+  "preset": "full",
+  "segments": ["model", "context", "five_hour", "weekly", "mode", "cost", "dir", "git", "mcps", "uptime"],
+  "separator": " | ",
+  "bar": { "width": 10, "filled": "━", "empty": "━" },
+  "colors": { "ok": "green", "warn": "yellow", "crit": "red", "dim": "#5a5a5a" },
+  "labels": { "five_hour": "H", "weekly": "W" },
+  "thresholds": {
+    "context_red_tokens": 300000,
+    "cost_red_usd": 10,
+    "limit_warn_left": 50,
+    "limit_crit_left": 20,
+    "burn_min_span_s": 300
+  },
+  "burn_projection": true
+}
