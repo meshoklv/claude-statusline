@@ -8,6 +8,7 @@ A fast, zero-dependency status line: context bar, 5-hour and weekly limits, burn
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/github/license/meshoklv/claude-statusline?style=flat-square">
+  <a href="https://github.com/meshoklv/claude-statusline/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/meshoklv/claude-statusline/ci.yml?branch=main&style=flat-square"></a>
   <img alt="Python" src="https://img.shields.io/badge/python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white">
   <img alt="Dependencies" src="https://img.shields.io/badge/dependencies-none-1bb91f?style=flat-square">
   <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey?style=flat-square">
